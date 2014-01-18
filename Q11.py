@@ -38,7 +38,7 @@ def calcularReajuste():
         if not value[3]:
             if salario_colaborador <= value[0] and salario_colaborador > value[1]:
                 print(reajusteSalario(salario_colaborador, percentual=value[2]))
-                #break
+                
 
         else:
             if salario_colaborador > value[0]:
