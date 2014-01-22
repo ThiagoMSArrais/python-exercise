@@ -14,3 +14,20 @@
 ###################################################################################
 
 def analisarTriangulo():
+
+    #listaNumeros
+    listaLados = []
+
+    #obter três números.
+    for x in range(1,4):
+        listaLados.append(int(input("%d)Informe um número:" % x)))
+
+    #analisar os lados.
+    if (listaLados[0] == listaLados[1]) and (listaLados[0] == listaLados[2]):
+        print ("Triângulo Equilátero.")
+
+    elif (listaLados[0] == listaLados[1] or listaLados[0] == listaLados[2]) or listaLados[1] == listaLados[2]:
+        print ("Triângulo Isósceles.")
+    else:
+        print ("Triângulo Escaleno.")
+
