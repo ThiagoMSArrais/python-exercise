@@ -18,5 +18,4 @@ def verificarAnoBissexto():
     if (numero % 4 == 0 and numero % 100 != 0) or numero % 400 == 0:
         print ("Ano Bissexto.")
     else:
-        print ("Não é Ano Bissexto") 
-verificarAnoBissexto() 
+        print ("Não é Ano Bissexto")  
