@@ -12,3 +12,28 @@
 ###################################################################
 
 def calcularMedia():
+
+    #lista de numeros.
+    notasProva = []    
+
+    try:
+        #obter a nota.
+        for x in range(1,4):
+            notasProva.append(float(input("%d) Informe nota da prova:" % x)))
+
+    except ValueError:
+        print ("Por favor, informe valores numericos.")
+        calcularMedia()
+
+    #Calcular media.
+    media = sum(notasProva) / len(notasProva)
+
+    #verificar a media e informar um resultado.
+    if media >= 7 and media < 10:
+        print ("Aprovado!")
+    
+    elif media < 7 and media > 0:
+        print ("Reprovado!")
+
+    else:
+        print ("Aprovado com Distincao!")
