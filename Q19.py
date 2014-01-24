@@ -16,15 +16,18 @@ def numeroExtenso():
     #Lista Ordem dos numeros
     ordemNumerica = ("centena", "dezena", "unidade")
 
+    #lista Caracteres.
+    caracteres = (", ", " e ", ".")
+
     try:
         #Obter um valor numerico.
-        numero = int(input("Informe um valor:"))
+        numero = input("Informe um valor:")
 
-        #numero inteiro menor que 1000.
-        if numero < 1000 and numero > 0:
-            for x in range(len(str(numero))):
-                if len(str(numero)) == 3:
-                    print ("%d %s, %d %s e %d %s" % (str(numero[0]), [ordemNumerica[0] + "s" if numero[0] > 1 else ordemNumerica[0]], str(numero[1]), [ordemNumerica[1] + "s" if numero[1] > 1 else ordemNumerica[1]], str(numero[2]),  [ordemNumerica[2] + "s" if numero[2] > 1 else ordemNumerica[2]]))
+        #verificar se é menor que 1000.
+        if int(numero) < 1000 and int(numero) > 0:
+            for x in range(len(numero)):
+                print ("%d %s%s" % (int(numero[x]), ordemNumerica[x + (3 - len(numero))] + "s" if int(numero[x]) > 1 else ordemNumerica[x + (3 - len(numero))], caracteres[x + (3 - len(numero))]), end="")                       
+			
         else:
             print ("Por favor, informe um valor menor que 1000 e maior que 0.")
             numeroExtenso()
@@ -32,4 +35,4 @@ def numeroExtenso():
         print ("Por favor, informe somente valor numerico.")
         numeroExtenso()
 
-numeroExtenso()
+    print()
