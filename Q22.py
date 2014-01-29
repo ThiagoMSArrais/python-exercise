@@ -19,5 +19,3 @@ def verificarNumero():
     except ValueError:
         print ("Por favor, informe somente um valor numerico.")
         verificarNumero()
-
-verificarNumero()
