@@ -8,18 +8,21 @@
 #     inteiro ou decimal.
 ########################################################################################################
 
+from collections import namedtuple
+
 
 def tratarNumeros():
 
-    #lista de numeros.
-    lista_numeros = []
+    #dados utilizando tuplas nomeadas.
+    Dados = namedtuple("Dados", "numero par_ou_impar positivo_ou_negativo inteiro_ou_decimal")
     
     #fazer o for e obter os valores.
     for i in range(1,3):
         #obter os valores
-        lista_numeros.append(input("Por favor, informe um número:"))
+        numero_capturado = input("Por favor, informe um número:")
         
         #verificar se é par ou ímpar.
-        if lista_numeros[i] % 2 == 0:
+        if eval(numero_capturado) % 2 == 0:
+            
             
     
