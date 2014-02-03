@@ -15,7 +15,7 @@ def tratarNumeros():
     lista_numeros = []
    
     #fazer o for e obter os valores.
-    for i in range(1,3):
+    for i in range(2):
         #obter os valores
         lista_numeros.append(input("Por favor, informe um número:"))
         
