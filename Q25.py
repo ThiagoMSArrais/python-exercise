@@ -18,6 +18,12 @@ def gerarPerguntas():
   
     #armazenar quantidade resultado positivo.
     quantidade_positivo = 0
+    
+    #status da resposta.
+    status = {2 : "Suspeito(a)",
+              3 : "Cúmplice",
+              4 : "Cúmplice",
+              5 : "Assassino"}
 
     #armazenar uma lista de perguntas.
     lista_perguntas = ["Telefonou para a vítima?",
@@ -39,22 +45,10 @@ def gerarPerguntas():
             #incrementar mais um.
             quantidade_positivo += 1
             
-
-    #verificar status da pessoa.
-    if quantidade_positivo == 0:
-        #imprimir Inocente.
+    #Verificar compatibilidade dos dados com o status.
+    if quantidade_positivo in status:
+        #Titular o status da pessoa.
+        print (status[quantidade_positivo])
+        
+    else:
         print ("Inocente")
-    
-    elif quantidade_positivo == 2:
-        #imprimir Suspeito.
-        print ("Suspeito")
-        
-    elif quantidade_positivo == 4 and quantidade_positivo == 3:
-        #imprimir cúmplice
-        print ("Cúmplice")
-        
-    elif quantidade_positivo == 5:
-        #imprimir Culpado
-        print ("Culpado")
-        
-        
