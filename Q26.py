@@ -16,6 +16,10 @@
 
 
 def descontoCombustivel():
+    
+    #inicializar variável.
+    tipo_combustivel = ""
+    calculo_valor_combustivel = 0
 
     #dados amarzenados sobre tipo de combustível, preço, desconto até 20 litros e desconto acima de 20 litros.
     desconto = [("gasolina", 2.50, 4, 6), ("alcool", 1.90, 3, 5)]
@@ -28,7 +32,32 @@ def descontoCombustivel():
         print ("Por favor, informe um valor númerico.")
         descontoCombustivel()
     
-    #obter tipo de combustível.
-    tipo_combustivel = input("Por favor, informe o tipo de combustível desejado (Gasolina ou Álcool):")
+    while True:
     
+        #obter tipo de combustível.
+        tipo_combustivel = input("Por favor, informe o tipo de combustível desejado (Gasolina ou Álcool):")
+
+        #verificar compatibilidade de dados obtido com os dados armazenados.
+        if tipo_combustivel in desconto[0][0] or tipo_combustivel in desconto[1][0]:
+            break
+        
+        else:
+            continue
+        
+    #tratar dados.
+    for index in range(2):
+        if desconto[index][0] == tipo_combustivel:
+            #verificar se o valor obtido é maior que vinte litros.
+            if litro > 20:
+                #efetuar o cálculo com desconto referenciado acima de vinte litros
+                calculo_valor_combustivel = (litro * desconto[index][1]) - (desconto[index][1] * desconto[index][3] / 100)
+            
+            else:
+                #efetuar o cáculo com desconto referenciado abaixo de vinte litros
+                calculo_valor_combustivel = (litro * desconto[index][1]) - (desconto[index][1] * desconto[index][2] / 100)
+                
+
+    print ("Tipo de combustível:%s\
+           \nQuantidade de litro:%.1f\
+           \nTotal com desconto R$%.f\n" % (tipo_combustivel, litro, calculo_valor_combustivel))
     
