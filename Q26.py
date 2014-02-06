@@ -50,12 +50,12 @@ def descontoCombustivel():
             #verificar se o valor obtido é maior que vinte litros.
             if litro > 20:
                 #efetuar o cálculo com desconto referenciado acima de vinte litros
-                calculo_valor_combustivel = (litro * desconto[index][1]) - (desconto[index][1] * desconto[index][3] / 100)
+                calculo_valor_combustivel = (litro * desconto[index][1]) - ((desconto[index][1] * litro) * desconto[index][3] / 100)
                 break
             
             else:
                 #efetuar o cáculo com desconto referenciado abaixo de vinte litros
-                calculo_valor_combustivel = (litro * desconto[index][1]) - (desconto[index][1] * desconto[index][2] / 100)
+                calculo_valor_combustivel = (litro * desconto[index][1]) - ((desconto[index][1] * litro) * desconto[index][2] / 100)
                 break
 
     print ("Tipo de combustível:%s\nQuantidade de litro:%.1f\nTotal com desconto R$%.f\n" % (tipo_combustivel, litro, calculo_valor_combustivel))
