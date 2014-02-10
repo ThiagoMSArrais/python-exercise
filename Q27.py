@@ -15,6 +15,7 @@ def calcular_precos():
   
     #variável
     count = 0
+    calculo_produto = 0
   
     #dados do produto.
     dados_produto = [("morango", 2.50, 2.20), ("maçã", 1.80, 1.50)]
@@ -45,3 +46,17 @@ def calcular_precos():
           
         else:
             continue
+
+    #calculos do produto
+    if peso <= 5 and peso > 0
+        #calculando o valor do produto com o peso.
+        calculo_produto = dados_produto[count][1] * peso
+        
+    elif peso > 5:
+        #calculando o valor do produto com o peso.
+        calculo_produto = dados_produto[count][2] * peso
+        #verificando se o peso é maior que 8kg ou o valor passa de R$25,00.
+        if peso > 8 or calculo_produto > 25:
+            calculo_produto = (dados_produto[count][2] * peso) - ((dados_produto[count][2] * peso) * 10 / 100)
+            
+    print ("Valor a pagar:R$%.2f" % calculo_produto)
