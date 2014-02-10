@@ -26,7 +26,7 @@ def calcular_precos():
         produto = input("Por favor, informe o produto desejado:")
         
         #verificar se tem o produto desejado
-        if produto in dados_produto[count]:
+        if produto.lower() in dados_produto[count]:
             break
         
         else:
