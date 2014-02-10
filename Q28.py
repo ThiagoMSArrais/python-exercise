@@ -14,3 +14,9 @@
 #tipo e quantidade de carne, preço total, tipo de pagamento,
 #valor do desconto e valor a pagar.
 ####################################################################################
+
+
+def fazer_pedido():
+
+    #dados do produto
+    dados_produto = [("file duplo", 4.90, 5.80), ("alcatra", 5.90, 6.80), ("picanha", 6.90, 7.80)]E
