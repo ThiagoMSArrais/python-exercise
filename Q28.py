@@ -18,5 +18,21 @@
 
 def fazer_pedido():
 
+    #variável
+    count = 0
+
     #dados do produto
     dados_produto = [("file duplo", 4.90, 5.80), ("alcatra", 5.90, 6.80), ("picanha", 6.90, 7.80)]
+    
+    while True:
+        
+        #obter o tipo de carne.
+        tipo_carne = input("Por favor, informe o tipo de carne que deseja:")
+        
+        #verificar se foi escolhiado a carne que estã na lista corretamente.
+        if tipo_carne.lower() in dados_produto[count]:
+            break
+        
+        else:
+            print ("Valor inválido!")
+            count = 0
