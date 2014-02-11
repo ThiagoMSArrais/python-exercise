@@ -21,34 +21,49 @@ def calcular_precos():
     dados_produto = [("morango", 2.50, 2.20), ("maçã", 1.80, 1.50)]
     
     while True:
+
+        #variavel
+        finalizar = False
       
         #perguntar qual tipo de produto desejado.
-        produto = input("Por favor, informe o produto desejado:")
+        produto = input("Por favor, informe o produto desejado(Morango ou Maçã):")
         
-        #verificar se tem o produto desejado
-        if produto.lower() in dados_produto[count]:
-            break
+        for x in range(2):
+            #verificar se tem o produto desejado
+            if produto.lower() == dados_produto[x][0]:
+                count = x
+                finalizar = True
+                break
         
-        else:
-            #verificar se está acima de dois.
-            if count > 2:
-                print ("Valor inválido.")
-                count = 0
+            else:
+                if x == 1:
+                    #Informa que o valor esta invalido.
+                    finalizar = False
+                    print ("Valor inválido.", produto)
     
+        if finalizar:
+            break
+
     while True:
         
-        #obter o peso do produto.
-        peso = float(input("Por favor, informe o peso desejado:"))
+        try:
         
-        #verificar se o peso está acima de zero.
-        if peso > 0:
-            break
+            #obter o peso do produto.
+            peso = float(input("Por favor, informe o peso desejado:"))
+        
+            #verificar se o peso está acima de zero.
+            if peso > 0:
+                break
           
-        else:
+            else:
+                continue
+
+        except ValueError:
+            print ("valor Invalido do peso.")
             continue
 
     #calculos do produto
-    if peso <= 5 and peso > 0
+    if peso <= 5 and peso > 0:
         #calculando o valor do produto com o peso.
         calculo_produto = dados_produto[count][1] * peso
         
@@ -60,3 +75,5 @@ def calcular_precos():
             calculo_produto = (dados_produto[count][2] * peso) - ((dados_produto[count][2] * peso) * 10 / 100)
             
     print ("Valor a pagar:R$%.2f" % calculo_produto)
+
+calcular_precos()
