@@ -21,10 +21,8 @@ def fazer_pedido():
     #variável
     count = 0
     total_preco = 0.0
-    tipo_pagamento = ""
     tipo_carne = ""
-    tipo_pagamento = ""
-    desconto = 0
+    preco_desconto = 0.0
 
     #dados do produto
     dados_produto = [("file duplo", 4.90, 5.80), ("alcatra", 5.90, 6.80), ("picanha", 6.90, 7.80)]
@@ -36,7 +34,7 @@ def fazer_pedido():
         #obter o tipo de carne.
         tipo_carne = input("Por favor, informe o tipo de carne que deseja:")
         
-        for index in dados_produto:
+        for index in range(len(dados_produto)):
             #verificar se foi escolhiado a carne que estã na lista corretamente.
             if tipo_carne.lower() in dados_produto[index][0]:
                 count = index
@@ -62,9 +60,6 @@ def fazer_pedido():
         except ValueError:
             print ("Valor invalido!")
             continue
-        
-        #obter informacao se vai ser pago no cartao tabajara.
-        tipo_pagamento = input("Pagar com cartão Tabajara?:")
 
         #verifica o peso e ver qual tipo de valor a ser calculado.
         if peso <= 5 and peso > 0:
@@ -74,11 +69,14 @@ def fazer_pedido():
         elif peso > 5:
             #calculo com valor acima de 5kg.
             total_preco = (peso * dados_produto[count][2]
+            
+        #obter informacao se vai ser pago no cartao tabajara.
+        tipo_pagamento = input("Pagar com cartão Tabajara?:")
 
-    #verificar se o cliente tem o cartao tabajara.
-    if tipo_pagamento.lower() == 'sim':
-        titulo_pagamento = "Cartao Tabajara"
-        total_preco = total_preco * 5 / 100
+        #verificar se o cliente tem o cartao tabajara.
+        if tipo_pagamento.lower() == 'sim':
+            titulo_pagamento = "Cartao Tabajara"
+            total_preco = total_preco * 5 / 100
 
     else:
        titulo_pagamento = "Dinheiro"
