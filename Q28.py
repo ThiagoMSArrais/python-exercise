@@ -82,6 +82,3 @@ def fazer_pedido():
             titulo_pagamento = "Dinheiro"
 
     print ("\t\t\tNota Fiscal\n\tTipo:%s\n\tQuantidade:%.3fkg\n\tPreço Total:R$%.2f\n\tTipo Pagamento:%s\n\tValor a pagar:R$%.2f\n" % (tipo_carne, peso, total_preco, titulo_pagamento, preco_desconto if preco_desconto != 0.0 else total_preco))
-
-
-fazer_pedido()
