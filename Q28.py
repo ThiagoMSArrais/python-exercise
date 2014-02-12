@@ -68,7 +68,7 @@ def fazer_pedido():
 
         elif peso > 5:
             #calculo com valor acima de 5kg.
-            total_preco = (peso * dados_produto[count][2]
+            total_preco = (peso * dados_produto[count][2])
             
         #obter informacao se vai ser pago no cartao tabajara.
         tipo_pagamento = input("Pagar com cartão Tabajara?:")
