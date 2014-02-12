@@ -31,7 +31,9 @@ def calcular_precos():
         for x in range(2):
             #verificar se tem o produto desejado
             if produto.lower() == dados_produto[x][0]:
+                #armazenar a posição do produto na variável count.
                 count = x
+                #Inserir o valor booleano True para a variável finalizar, para que possa interromper o loop while.
                 finalizar = True
                 break
         
