@@ -35,6 +35,7 @@ def calcular_precos():
                 count = x
                 #Inserir o valor booleano True para a variável finalizar, para que possa interromper o loop while.
                 finalizar = True
+                #interromper o loop for caso tenha encontrado o determinado produto.
                 break
         
             else:
