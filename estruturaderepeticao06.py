@@ -14,4 +14,4 @@ def imprimir_numeros():
         for y in range(20):
             #imprimir o valor em horizontal e depois em vertical,
             #utilizando uma condição, para poder mudar a posição.
-            print (y + 1 + "\n" if x == 0 else y + 1 + " ")
+            print (int(x + 1), end=' ' if x == 1 else print())
