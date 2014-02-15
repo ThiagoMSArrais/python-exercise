@@ -5,12 +5,5 @@
 ############################################################################
 
 
-#lista de números inteiros
-lista_numeros = []
-
-#iterar cinco vezes.
-for x in range(5):
-    #armazenar o valor na lista_numeros.
-    lista_numeros.append(int(input("Numero:")))
-    
-    #
+# lista de numeros, repetir 5 vezes e informar o maior numero.
+lista_numeros = max([int(input("Numero:")) for x in range(5)])
